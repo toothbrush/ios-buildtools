@@ -33,6 +33,15 @@ customize the script for your needs, current defaults are latest iOS SDK, iPad,
 Debug build), and then, if the build was successful, runs your new target in
 the iOS simulator. I find this very useful.
 
+If you want Vim to be able to use the rakefile using the normal `:make` command,
+you can add the following line to your `.vimrc`:
+
+    autocmd FileType objc set makeprg=rake
+
+##Caveats
+
+Note that if you want to run the Vim command `:make`, you might need to edit Vim's path setting, for example with `:set path+=/checkout/location`. In my case, I also needed to add a file to `/etc/paths.d` with the paths to `xcodebuild-wrapper.sh` and `iphonesim`, before MacVim would manage to make things out the box.
+
 ##Credits
 
 I didn't really create anything here, I just put a few building blocks together the way I liked then. Credit should go to the following people (see the URLs for where I got all the ingredients for this toolset):

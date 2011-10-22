@@ -21,6 +21,7 @@ def project_file(root_dir='.')
 end
 
 def xcodebuild
+    puts ENV['PATH']
     "xcodebuild-wrapper.sh #{project_file}"
 end
 

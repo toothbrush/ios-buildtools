@@ -25,7 +25,6 @@ if [ $resultcode -ne 0 ]; then
     exit
 fi
 
-echo "Resultcode == $resultcode"
 executable=`echo "$buildresult" | grep Touch | awk ' { print $NF } '`
 echo "This produced the executable:"
 echo $executable
