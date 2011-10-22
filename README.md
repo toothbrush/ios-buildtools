@@ -3,7 +3,6 @@
 *Author: Paul van der Walt, 2011*
 
 ##Introduction
-=====
 
 If you're like me, you don't like to use XCode, but are forced to. Here is a
 (partial) solution to the problem: a set of ugly hacks using Rake, xcodebuild
@@ -12,7 +11,6 @@ https://github.com/jhaynie/iphonesim) which can launch the iOS simulator from
 the console.
 
 ##Usage
-=====
 
 Make a clone of these scripts somewhere and place this directory in your `$PATH`.
 This way, if something gets updated, you just do a `git pull` and you're good
@@ -34,7 +32,6 @@ Debug build), and then, if the build was successful, runs your new target in
 the iOS simulator. I find this very useful.
 
 ##Credits
-=======
 
 I didn't really create anything here, I just put a few building blocks together the way I liked then. Credit should go to the following people (see the URLs for where I got all the ingredients for this toolset):
 
