@@ -2,7 +2,7 @@
 
 *Author: Paul van der Walt, 2011*
 
-INTRO
+##Introduction
 =====
 
 If you're like me, you don't like to use XCode, but are forced to. Here is a
@@ -11,7 +11,7 @@ If you're like me, you don't like to use XCode, but are forced to. Here is a
 https://github.com/jhaynie/iphonesim) which can launch the iOS simulator from
 the console.
 
-USAGE
+##Usage
 =====
 
 Make a clone of these scripts somewhere and place this directory in your `$PATH`.
@@ -27,4 +27,16 @@ $ ln -s $IOS_BUILDTOOLS_CLONE/Rakefile
 
 Now, you'll be able to run `rake` from within any subdirectory of your project
 (for example if you're using Vim as an editor), and the Rake system will locate
-the Rakefile. Next, the Rakefile locates the `.xcodeproj/
+the Rakefile. Next, the Rakefile locates the `.xcodeproj/` directory, which it
+passes to the `xcodebuild-wrapper.sh` script. It does some magic (feel free to
+customize the script for your needs, current defaults are latest iOS SDK, iPad,
+Debug build), and then, if the build was successful, runs your new target in
+the iOS simulator. I find this very useful.
+
+##Credits
+=======
+
+I didn't really create anything here, I just put a few building blocks together the way I liked then. Credit should go to the following people (see the URLs for where I got all the ingredients for this toolset):
+
+* https://github.com/jhaynie/iphonesim
+* http://blog.highorderbit.com/2009/09/02/building-xcode-projects-in-vim-with-rake/
