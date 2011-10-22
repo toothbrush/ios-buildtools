@@ -52,7 +52,7 @@ If you use (Mac)Vim like me, you might want to look at the following plugins.
 
 ##Credits
 
-I didn't really create anything here, I just put a few building blocks together the way I liked then. Credit should go to the following people (see the URLs for where I got all the ingredients for this toolset):
+I didn't really create anything here, I just put a few building blocks together the way I liked them. Credit should go to the following people (see the URLs for where I got all the ingredients for this toolset):
 
 * https://github.com/jhaynie/iphonesim
 * http://blog.highorderbit.com/2009/09/02/building-xcode-projects-in-vim-with-rake/
