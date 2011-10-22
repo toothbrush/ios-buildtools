@@ -50,6 +50,10 @@ If you use (Mac)Vim like me, you might want to look at the following plugins.
 * snipmate.vim
 * errormarker.vim
 
+To make documentation browsing much less of a pain (using `K` in vim), consider applying this workaround:
+
+* http://mymacinations.com/2008/02/06/changing-the-systems-default-settings-for-html-files-safe/
+
 ##Credits
 
 I didn't really create anything here, I just put a few building blocks together the way I liked them. Credit should go to the following people (see the URLs for where I got all the ingredients for this toolset):
