@@ -11,6 +11,7 @@
 
 require 'find'
 
+# Search for a (indirect, possibly) subdirectory called *.xcodeproj
 def project_file(root_dir='.')
   Find.find(root_dir) do |f|
     if f =~ /\.xcodeproj$/
@@ -20,10 +21,12 @@ def project_file(root_dir='.')
   nil
 end
 
+# this action just calls the wrapper script
 def xcodebuild
     "xcodebuild-wrapper.sh #{project_file}"
 end
 
+# later we could add actions like "just build" or "archive" here.
 desc 'Build the default target using the default configuration'
 task :build do |t|
   puts %x{
