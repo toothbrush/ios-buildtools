@@ -21,6 +21,8 @@ Rakefile. For example, do:
 ```sh
 $ cd $YOUR_COOL_PROJECT
 $ ln -s $IOS_BUILDTOOLS_CLONE/Rakefile
+$ cd some/deep/subdir
+$ rake
 ```
 
 Now, you'll be able to run `rake` from within any subdirectory of your project
