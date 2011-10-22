@@ -14,7 +14,7 @@ the console.
 
 Make a clone of these scripts somewhere and place this directory in your `$PATH`.
 This way, if something gets updated, you just do a `git pull` and you're good
-to go again. Now make go to your iOS project directory (or a directory which
+to go again. Now go to your iOS project directory (or a directory which
 has a `.xcodeproj` file somewhere in it's children), and make a symlink to the
 Rakefile. For example, do:
 
