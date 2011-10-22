@@ -42,6 +42,14 @@ you can add the following line to your `.vimrc`:
 
 Note that if you want to run the Vim command `:make`, you might need to edit Vim's path setting, for example with `:set path+=/checkout/location`. In my case, I also needed to add a file to `/etc/paths.d` with the paths to `xcodebuild-wrapper.sh` and `iphonesim`, before MacVim would manage to make things out the box.
 
+##Recommendations
+
+If you use (Mac)Vim like me, you might want to look at the following plugins.
+
+* cocoa.vim
+* snipmate.vim
+* errormarker.vim
+
 ##Credits
 
 I didn't really create anything here, I just put a few building blocks together the way I liked then. Credit should go to the following people (see the URLs for where I got all the ingredients for this toolset):
