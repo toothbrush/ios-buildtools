@@ -1,4 +1,13 @@
 #!/bin/bash
+#
+# Wrapper script for the xcodebuild commandline tool. Useful to
+# force it into making a Debug build, and later running the product
+# in the iOS simulator.
+#
+# Relies on iphonesim, which can be found at
+# https://github.com/jhaynie/iphonesim
+#
+# Script by Paul van der Walt, 2011
 
 IPHONESIM=iphonesim
 
