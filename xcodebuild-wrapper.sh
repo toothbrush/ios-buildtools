@@ -35,4 +35,7 @@ latest=`$IPHONESIM showsdks 2>&1 | grep "(.\..)" | sed "s/.*(\(.\..\))$/\1/" | t
 echo "Latest SDK version seems to be $latest."
 
 $IPHONESIM launch $executable $latest ipad &
-# TODO: bring iphonesimulator to front?
+# Find the directory where this script sits:
+DIR="$( cd -P "$( dirname "$0" )" && pwd )"
+# ...and run the applescript.
+osascript $DIR/focusSimulator.applescript
