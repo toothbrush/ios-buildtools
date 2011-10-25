@@ -40,7 +40,7 @@ if [ $resultcode -ne 0 ]; then
 fi
 
 # find the name of the executable in the output. Ugly, but works.
-executable=`echo "$buildresult" | egrep "(Touch|SetMode).*app" | awk ' { print $NF } '`
+executable=`echo "$buildresult" | egrep "(Touch|SetMode).*app" | awk ' NR==1 { print $NF } '`
 echo "This produced the executable:" >&2
 echo $executable >&2
 

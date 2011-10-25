@@ -33,6 +33,12 @@ def xcodebuild
 end
 
 # later we could add actions like "just build" or "archive" here.
+desc 'Clean'
+task :clean do |t|
+  puts %x{
+    echo "unimplemented"
+  }
+end
 desc 'Build the default target using the default configuration'
 task :build do |t|
   puts %x{
