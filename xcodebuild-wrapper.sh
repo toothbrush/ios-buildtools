@@ -16,7 +16,15 @@ project_file=$1
 echo "Building $project_file..." >&2
 
 # by default we use the Debug config and build for the simulator
-commandline="xcodebuild -project $project_file -configuration Debug -sdk iphonesimulator "
+ext=`basename $project_file | cut -d'.' -f2`
+
+if [ "$ext" = "xcworkspace" ] ; then
+    scheme=`xcodebuild -workspace $project_file -list | egrep "^       "|awk ' { print $1 }' | head -n 1`
+    action="install"
+    commandline="xcodebuild -workspace $project_file -scheme $scheme -configuration Debug -sdk iphonesimulator $action"
+else
+    commandline="xcodebuild -project $project_file -configuration Debug -sdk iphonesimulator"
+fi
 echo "The command will be:" >&2
 echo "$commandline" >&2
 
@@ -32,7 +40,7 @@ if [ $resultcode -ne 0 ]; then
 fi
 
 # find the name of the executable in the output. Ugly, but works.
-executable=`echo "$buildresult" | grep Touch | awk ' { print $NF } '`
+executable=`echo "$buildresult" | egrep "(Touch|SetMode).*app" | awk ' { print $NF } '`
 echo "This produced the executable:" >&2
 echo $executable >&2
 
@@ -40,7 +48,10 @@ echo $executable >&2
 latest=`$IPHONESIM showsdks 2>&1 | grep "(.\..)" | sed "s/.*(\(.\..\))$/\1/" | tail -n 1`
 echo "Latest SDK version seems to be $latest." >&2
 
-$IPHONESIM launch $executable $latest ipad &
+launch_cmd="$IPHONESIM launch $executable $latest ipad"
+# echo "Launch command will be:"
+# echo $launch_cmd
+$launch_cmd &
 
 # Find the directory where this script sits:
 DIR="$( cd -P "$( dirname "$0" )" && pwd )"

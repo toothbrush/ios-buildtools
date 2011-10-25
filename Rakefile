@@ -13,6 +13,12 @@ require 'find'
 
 # Search for a (indirect, possibly) subdirectory called *.xcodeproj
 def project_file(root_dir='.')
+  #if there's a workspace, use that instead.
+  Find.find(root_dir) do |f|
+    if f =~ /\.xcworkspace$/
+      return f
+    end
+  end
   Find.find(root_dir) do |f|
     if f =~ /\.xcodeproj$/
       return f
