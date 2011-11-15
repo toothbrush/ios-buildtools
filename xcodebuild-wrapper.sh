@@ -44,7 +44,7 @@ executable=`echo "$buildresult" | egrep "(Touch|SetMode).*app" | awk ' NR==1 { p
 echo "This produced the executable:" >&2
 echo $executable >&2
 
-if [ ! -x which $IPHONESIM ] ; then
+if [ ! -x "`which $IPHONESIM`" ] ; then
     echo "Executable $IPHONESIM not found! Aborting."
     exit 3
 fi
